@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>8px Magazine</title>
+    <meta name="description" content="8px magazine is a publication highlighting the human side of designers.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+            v2.0 | 20110126
+            License: none (public domain)
+            */
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        body {
+            background-color: #CC0077;
+            color: white;
+            font: 300 18px/22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        .header {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 5rem;
+        }
+
+        .footer {
+            padding-bottom: 5rem;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 800px;
+            width: 95%;
+        }
+
+        .module {
+            margin-bottom: 5rem;
+        }
+
+        h1 {
+            color: rgba(255, 255, 255, .75);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 5rem;
+        }
+
+        .light {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        a {
+            border-bottom: 2px solid;
+            color: inherit;
+            padding-bottom: 2px;
+            text-decoration: none;
+            transition: all ease .3s;
+        }
+
+        a:hover {
+            border-bottom-color: #CC0077;
+        }
+
+        .stripe-button {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="https://medium.com/8px-magazine"><img src="img/8px--logo--white.png" alt="8px magazine" /></a>
+    </div>
+    <div class="container">
+        <div class="module">
+            <h1 class="centered">
+                Book a session.
+            </h1>
+            <script async
+            src="https://js.stripe.com/v3/buy-button.js">
+            </script>
+            <div class="stripe-button">
+                <stripe-buy-button
+                buy-button-id="buy_btn_1Nomq2C1yaaU4OU1jDzOS3g6"
+                publishable-key="pk_live_51IIGIYC1yaaU4OU1lRQPEnPaUBd23EtReVvwSTOc0urcBWGae0wWMguFAkAu69YOEKJHnvcVeszgxz7Ku43TF4OR00MephXqIw"
+                >
+                </stripe-buy-button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="centered footer">
+        By <a href="https://www.twitter.com/disco_lu">@disco_lu</a>
+    </footer>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111870370-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111870370-1');
+    </script>
+</body>
+
+</html>
