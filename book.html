@@ -185,7 +185,8 @@
         }
 
         .module {
-            margin-bottom: 5rem;
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         h1 {
@@ -193,7 +194,7 @@
             font-size: 2rem;
             font-weight: 700;
             line-height: 1.3;
-            margin-bottom: 5rem;
+            margin-bottom: 1rem;
         }
 
         .light {
@@ -215,6 +216,7 @@
         .stripe-button {
             display: flex;
             justify-content: center;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -228,16 +230,17 @@
             <h1 class="centered">
                 Book a session.
             </h1>
+            <p>Let's talk about design systems!</p>
             <script async
             src="https://js.stripe.com/v3/buy-button.js">
             </script>
-            <div class="stripe-button">
-                <stripe-buy-button
-                buy-button-id="buy_btn_1Nomq2C1yaaU4OU1jDzOS3g6"
-                publishable-key="pk_live_51IIGIYC1yaaU4OU1lRQPEnPaUBd23EtReVvwSTOc0urcBWGae0wWMguFAkAu69YOEKJHnvcVeszgxz7Ku43TF4OR00MephXqIw"
-                >
-                </stripe-buy-button>
-            </div>
+        </div>
+        <div class="stripe-button">
+            <stripe-buy-button
+            buy-button-id="buy_btn_1Nomq2C1yaaU4OU1jDzOS3g6"
+            publishable-key="pk_live_51IIGIYC1yaaU4OU1lRQPEnPaUBd23EtReVvwSTOc0urcBWGae0wWMguFAkAu69YOEKJHnvcVeszgxz7Ku43TF4OR00MephXqIw"
+            >
+            </stripe-buy-button>
         </div>
     </div>
 
