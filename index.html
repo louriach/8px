@@ -1,614 +1,664 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>8px Magazine</title>
-    <meta name="description" content="8px magazine is a publication highlighting the human side of designers.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
-    <style>
-        /* http://meyerweb.com/eric/tools/css/reset/ 
-            v2.0 | 20110126
-            License: none (public domain)
-            */
+  <meta charset="utf-8">
+  <title>8px — Design system consultancy</title>
 
-        html,
-        body,
-        div,
-        span,
-        applet,
-        object,
-        iframe,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        blockquote,
-        pre,
-        a,
-        abbr,
-        acronym,
-        address,
-        big,
-        cite,
-        code,
-        del,
-        dfn,
-        em,
-        img,
-        ins,
-        kbd,
-        q,
-        s,
-        samp,
-        small,
-        strike,
-        strong,
-        sub,
-        sup,
-        tt,
-        var,
-        b,
-        u,
-        i,
-        center,
-        dl,
-        dt,
-        dd,
-        ol,
-        ul,
-        li,
-        fieldset,
-        form,
-        label,
-        legend,
-        table,
-        caption,
-        tbody,
-        tfoot,
-        thead,
-        tr,
-        th,
-        td,
-        article,
-        aside,
-        canvas,
-        details,
-        embed,
-        figure,
-        figcaption,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        output,
-        ruby,
-        section,
-        summary,
-        time,
-        mark,
-        audio,
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
+  <meta name="description" content="8px is a design system consultancy run by Luis Ouriach. Coming soon.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        /* HTML5 display-role reset for older browsers */
-        article,
-        aside,
-        details,
-        figcaption,
-        figure,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        section {
-            display: block;
-        }
+  <meta property="og:title" content="8px — Design system consultancy">
+  <meta property="og:description" content="8px is a design system consultancy run by Luis Ouriach. Coming soon.">
+  <meta property="og:url" content="https://8px.design/">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="8px">
+  <meta name="twitter:site" content="@disco_lu">
 
-        body {
-            line-height: 1;
-        }
+  <link rel="shortcut icon" type="image/png" href="favicon.ico">
 
-        ol,
-        ul {
-            list-style: none;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
 
-        blockquote,
-        q {
-            quotes: none;
-        }
+  <style>
+    :root {
+      --color-primary: oklch(0.42 0.12 350);
+      --color-secondary: oklch(0.42 0.12 350 / 0.7);
+      --color-background: oklch(0.99 0.004 350);
+      --color-highlighter: oklch(0.90 0.03 350);
+      --color-border: oklch(0.82 0.03 350);
+      --font-size: 15px;
+      --line-height: 1.6;
+      --font-family: 'Google Sans Flex', Arial, sans-serif;
+    }
 
-        blockquote:before,
-        blockquote:after,
-        q:before,
-        q:after {
-            content: '';
-            content: none;
-        }
+    /* Pink theme (default) */
+    [data-theme-palette="pink"][data-theme="dark"] {
+      --color-primary: oklch(0.88 0.06 350);
+      --color-secondary: oklch(0.88 0.06 350 / 0.7);
+      --color-background: oklch(0.16 0.008 350);
+      --color-highlighter: oklch(0.32 0.08 350);
+      --color-border: oklch(0.30 0.02 350);
+    }
 
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+    /* Brutal theme (black and white) */
+    [data-theme-palette="brutal"]:not([data-theme="dark"]) {
+      --color-primary: oklch(0 0 0);
+      --color-secondary: oklch(0 0 0 / 0.7);
+      --color-background: oklch(1 0 0);
+      --color-highlighter: oklch(0.95 0 0);
+      --color-border: oklch(0 0 0);
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    [data-theme-palette="brutal"][data-theme="dark"] {
+      --color-primary: oklch(1 0 0);
+      --color-secondary: oklch(1 0 0 / 0.7);
+      --color-background: oklch(0 0 0);
+      --color-highlighter: oklch(0.22 0 0);
+      --color-border: oklch(1 0 0);
+    }
 
-        img {
-            max-width: 100%;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .centered {
-            text-align: center;
-        }
+    html {
+      font-size: var(--font-size);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-        body {
-            background-color: #CC0077;
-            color: white;
-            font: 300 18px/22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        }
+    body {
+      background-color: var(--color-background);
+      color: var(--color-primary);
+      font-family: var(--font-family);
+      font-size: var(--font-size);
+      line-height: var(--line-height);
+      min-height: 100vh;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
 
-        .header {
-            padding: 5rem 0;
-            text-align: center;
-        }
+    .page {
+      padding: 1.5rem;
+      max-width: 64ch;
+    }
 
-        .header img {
-            max-width: 5rem;
-        }
+    .header {
+      margin-bottom: 3rem;
+    }
 
-        .footer {
-            padding-bottom: 5rem;
-        }
+    .header__name {
+      font-size: var(--font-size);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
 
-        .container {
-            margin: 0 auto;
-            max-width: 800px;
-            width: 95%;
-        }
+    .header__tagline {
+      font-size: var(--font-size);
+      color: var(--color-secondary);
+    }
 
-        .module {
-            margin-bottom: 5rem;
-        }
+    .bio {
+      margin-bottom: 3rem;
+    }
 
-        h1 {
-            color: rgba(255, 255, 255, .75);
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 5rem;
-        }
+    .bio__text {
+      font-size: var(--font-size);
+      margin-bottom: 1rem;
+    }
 
-        .light {
-            color: rgba(255, 255, 255, 1);
-        }
+    .bio__text:last-child {
+      margin-bottom: 0;
+    }
 
-        a {
-            border-bottom: 2px solid;
-            color: inherit;
-            padding-bottom: 2px;
-            text-decoration: none;
-            transition: all ease .3s;
-        }
+    .bio__text a,
+    .bio__section a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-decoration-color: var(--color-primary);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+    }
 
-        a:hover {
-            border-bottom-color: #CC0077;
-        }
-    </style>
+    .bio__text a:hover,
+    .bio__section a:hover {
+      text-decoration-style: wavy;
+      background-color: var(--color-highlighter);
+    }
+
+    .bio__icon-link {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin: 0 0.15em;
+      vertical-align: -0.15em;
+      transition: transform 0.25s ease;
+    }
+
+    .bio__icon-link:hover {
+      scale: 1.1;
+    }
+
+    .bio__icon-link.github:hover, .bio__icon-link.figma:hover, .bio__icon-link.twitter:hover, .bio__icon-link.linkedin:hover {
+      background-color: transparent;
+    }
+
+    .github:hover, .linkedin:hover {
+      transform: rotate(5deg);
+    }
+
+    .figma:hover, .twitter:hover {
+      transform: rotate(-5deg);
+    }
+
+    .bio__text a:hover .bio__icon-link {
+      scale: 1.2;
+    }
+
+    .bio__icon-link svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .section-title {
+      font-size: var(--font-size);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      color: var(--color-secondary);
+    }
+
+    .services {
+      margin-bottom: 3rem;
+    }
+
+    .services__list {
+      list-style: none;
+    }
+
+    .services__item {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .services__item:last-child {
+      margin-bottom: 0;
+    }
+
+    .services__item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 0.5em;
+      height: 0.5em;
+      background-color: var(--color-highlighter);
+      display: block;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer__link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-decoration-color: var(--color-primary);
+      text-underline-offset: 2px;
+      font-size: var(--font-size);
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    .footer__link:hover {
+      text-decoration-color: currentColor;
+    }
+
+    .styling-info {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .styling-info p {
+      font-size: var(--font-size);
+      color: var(--color-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .code {
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+      word-wrap: break-word;
+      box-decoration-break: clone;
+      padding: 1rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+    }
+
+    .code pre {
+      margin: 0;
+    }
+
+    .code code {
+      font-family: var(--font-family);
+      font-size: var(--font-size);
+      white-space: pre;
+      display: block;
+    }
+
+    .mode-switcher,
+    .theme-switcher {
+      font-size: var(--font-size);
+      color: var(--color-primary);
+      margin-top: 1rem;
+    }
+
+    .mode-switcher__link,
+    .theme-switcher__try-again {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-decoration-color: var(--color-primary);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+    }
+
+    .mode-switcher__link:hover,
+    .theme-switcher__try-again:hover {
+      text-decoration-color: currentColor;
+      text-decoration-style: wavy;
+      background-color: var(--color-highlighter);
+    }
+
+    .mode-switcher__link.active {
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .mode-switcher__link.active:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    .theme-switcher__try-again {
+      margin-left: 0.25rem;
+    }
+
+    .theme-switcher__link {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    /* Pink theme link color */
+    .theme-switcher__link[data-theme-palette="pink"] {
+      color: oklch(0.42 0.12 350);
+      text-decoration-color: oklch(0.42 0.12 350);
+    }
+
+    [data-theme="dark"] .theme-switcher__link[data-theme-palette="pink"] {
+      color: oklch(0.88 0.06 350);
+      text-decoration-color: oklch(0.88 0.06 350);
+    }
+
+    /* Brutal theme link color */
+    .theme-switcher__link[data-theme-palette="brutal"] {
+      color: oklch(0 0 0);
+      text-decoration-color: oklch(0 0 0);
+    }
+
+    [data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"] {
+      color: oklch(1 0 0);
+      text-decoration-color: oklch(1 0 0);
+    }
+
+    /* Random theme link color - uses current random color */
+    .theme-switcher__link[data-theme-palette="random"] {
+      color: var(--color-primary);
+      text-decoration-color: var(--color-primary);
+    }
+
+    .theme-switcher__link::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 0.5em;
+      height: 0.5em;
+      display: block;
+    }
+
+    .theme-switcher__link[data-theme-palette="pink"]::before {
+      background-color: oklch(0.42 0.12 350);
+    }
+
+    [data-theme="dark"] .theme-switcher__link[data-theme-palette="pink"]::before {
+      background-color: oklch(0.88 0.06 350);
+    }
+
+    .theme-switcher__link[data-theme-palette="brutal"]::before {
+      background-color: oklch(0 0 0);
+    }
+
+    [data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]::before {
+      background-color: oklch(1 0 0);
+    }
+
+    .theme-switcher__link[data-theme-palette="random"]::before {
+      background-color: var(--color-primary);
+    }
+
+    .theme-switcher__link:hover {
+      text-decoration-color: currentColor;
+      text-decoration-style: wavy;
+    }
+
+    .theme-switcher__link[data-theme-palette="pink"]:hover {
+      background-color: oklch(0.90 0.03 350);
+    }
+
+    [data-theme="dark"] .theme-switcher__link[data-theme-palette="pink"]:hover {
+      background-color: oklch(0.32 0.08 350);
+    }
+
+    .theme-switcher__link[data-theme-palette="brutal"]:hover {
+      background-color: oklch(0.95 0 0);
+    }
+
+    [data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]:hover {
+      background-color: oklch(0.22 0 0);
+    }
+
+    .theme-switcher__link[data-theme-palette="random"]:hover {
+      background-color: var(--color-highlighter);
+    }
+
+    .theme-switcher__link.active {
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .theme-switcher__link.active:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111870370-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-111870370-1');
+  </script>
 </head>
 
 <body>
-    <div class="header">
-        <a href="https://medium.com/8px-magazine"><img src="img/8px--logo--white.png" alt="8px magazine" /></a>
-    </div>
-    <div class="container">
-        <div class="module">
-            <h1 class="centered">
-                A <a href="https://medium.com/8px-magazine">publication</a> for the <span class="light">human
-                    side</span> of designers.
-            </h1>
-        </div>
-        <div class="module">
-            <!-- Begin MailChimp Signup Form -->
-            <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
-            <style type="text/css">
-                .mc-field-group,
-                #mc_embed_signup input[type='submit'] {
-                    display: block;
-                    margin: 0 auto 1rem;
-                    max-width: 300px;
-                }
 
-                #mc_embed_signup label {
-                    display: none;
-                }
+  <div class="page">
 
-                #mc_embed_signup li label {
-                    display: inline-block;
-                }
+    <header class="header">
+      <h1 class="header__name">8px</h1>
+      <p class="header__tagline">A design system consultancy, run by Luis Ouriach.</p>
+    </header>
 
-                #mc_embed_signup input:not([type='radio']),
-                #mc_embed_signup select {
-                    border: none;
-                    border-radius: .5rem;
-                    color: black;
-                    font-size: 18px;
-                    font-weight: 700;
-                    height: 2rem;
-                    line-height: 2rem;
-                    padding: 0 .5rem;
-                    width: 100%;
-                }
+    <section class="bio">
+      <p class="bio__text">
+        8px is a design system consultancy built on 6 years spent as a Designer Advocate at Figma:
+        design system audits, token architecture, component libraries, and the plumbing that
+        decides whether a system actually gets adopted or just gets ignored.
+      </p>
+      <p class="bio__text">
+        I'm <a href="https://lineswritten.co.uk">Luis Ouriach</a> — former sole designer of Simple
+        Design System<a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system" class="bio__icon-link figma" aria-label="Simple Design System on Figma" target="_blank" rel="noopener">
+          <svg viewBox="-50 0 300 300" xmlns="http://www.w3.org/2000/svg"><title>Figma</title><path fill="#0acf83" d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z"/><path fill="#a259ff" d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z"/><path fill="#f24e1e" d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z"/><path fill="#ff7262" d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50V0z"/><path fill="#1abcfe" d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z"/></svg>
+        </a><a href="https://github.com/figma/sds" class="bio__icon-link github" aria-label="Simple Design System on GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path fill="currentColor" d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" transform="translate(-84,-7399)"/></svg>
+        </a>, the <abbr title="user interface">UI</abbr> kit preloaded into every Figma
+        account, and occasional writer on <a href="https://medium.com/@disco_lu">Medium</a>.
+      </p>
+    </section>
 
-                #mc_embed_signup input::placeholder {
-                    color: black;
-                }
+    <section class="services">
+      <h2 class="section-title">What to expect</h2>
+      <ul class="services__list">
+        <li class="services__item">Design system audits (the honest kind)</li>
+        <li class="services__item">Token architecture (not tokens for the sake of it)</li>
+        <li class="services__item">Component libraries (that survive contact with real designers)</li>
+        <li class="services__item">Rollout support (because shipping isn't the finish line)</li>
+        <li class="services__item">Figma best practices (opinionated)</li>
+        <li class="services__item">Library rebuilds (for the ones you inherited)</li>
+        <li class="services__item">AI-readiness for libraries (yes, that's a service now)</li>
+        <li class="services__item">Design crits (no ego allowed)</li>
+        <li class="services__item">A third pair of eyes (it's hard to get external feedback!)</li>
+        <li class="services__item">Design system therapy (bring tissues)</li>
+      </ul>
+    </section>
+    <section class="bio">
+      <p class="bio__text">
+        We can work together for 30 minutes or 3 days. Systems are flexible and so am I.
+      </p>
+      <p class="bio__text">
+        If you'd like to chat, say hello on <a href="https://twitter.com/disco_lu" title="Twitter" class="bio__icon-link twitter">
+          <svg viewBox="-0.25 -104.25 1109.5 1109.5" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M741 .2V0h52l19 3.8c12.667 2.467 24.167 5.7 34.5 9.7 10.334 4 20.334 8.667 30 14 9.667 5.333 18.434 10.767 26.301 16.3 7.8 5.467 14.8 11.267 21 17.4C929.933 67.4 939.5 69 952.5 66s27-7.167 42-12.5 29.834-11.333 44.5-18c14.667-6.667 23.601-10.9 26.801-12.7 3.133-1.866 4.8-2.866 5-3l.199-.3 1-.5 1-.5 1-.5 1-.5.2-.3.3-.2.301-.2.199-.3 1-.3 1-.2-.199 1.5-.301 1.5-.5 1.5-.5 1.5-.5 1-.5 1-.5 1.5c-.333 1-.666 2.333-1 4-.333 1.667-3.5 8.333-9.5 20S1051 73 1042 85s-17.066 21.066-24.199 27.2c-7.2 6.2-11.967 10.533-14.301 13-2.333 2.533-5.166 4.866-8.5 7l-5 3.3-1 .5-1 .5-.199.3-.301.2-.3.2-.2.3-1 .5-1 .5-.199.3-.301.2-.3.2-.2.3-.199.3-.301.2-.3.2-.2.3h5l28-6c18.667-4 36.5-8.833 53.5-14.5l27-9 3-1 1.5-.5 1-.5 1-.5 1-.5 1-.5 2-.3 2-.2v2l-.5.2-.5.3-.199.3-.301.2-.3.2-.2.3-.199.3-.301.2-.3.2-.2.3-.199.3-.301.2-.5 1-.5 1-.3.2c-.133.2-4.366 5.866-12.7 17-8.333 11.2-12.833 16.866-13.5 17-.666.2-1.6 1.2-2.8 3-1.133 1.866-8.2 9.3-21.2 22.3s-25.732 24.566-38.199 34.7c-12.533 10.2-18.867 22.733-19 37.6-.2 14.8-.967 31.534-2.301 50.2-1.333 18.667-3.833 38.833-7.5 60.5-3.666 21.667-9.333 46.167-17 73.5-7.666 27.333-17 54-28 80s-22.5 49.333-34.5 70-23 38.167-33 52.5-20.166 27.833-30.5 40.5c-10.333 12.667-23.399 26.934-39.199 42.8-15.867 15.8-24.533 24.467-26 26-1.533 1.467-8.066 6.934-19.601 16.4-11.466 9.533-23.8 19.066-37 28.6-13.133 9.467-25.2 17.367-36.2 23.7s-24.266 13.566-39.8 21.7C630.734 840.4 614 848 596 855s-37 13.5-57 19.5-39.333 10.667-58 14c-18.666 3.333-39.833 6.167-63.5 8.5l-35.5 3.5v.5h-65v-.5l-8.5-.5c-5.666-.333-10.333-.667-14-1-3.666-.333-17.5-2.167-41.5-5.5s-42.833-6.667-56.5-10c-13.666-3.333-34-9.667-61-19s-50.1-18.767-69.3-28.3c-19.133-9.467-31.133-15.467-36-18-4.8-2.467-10.2-5.533-16.2-9.2l-9-5.5-.199-.3-.301-.2-.3-.2-.2-.3-1-.5-1-.5-.199-.3-.301-.2-.3-.2-.2-.3-.199-.3L.5 800H0v-2l1 .2 1 .3 4.5.5c3 .333 11.167.833 24.5 1.5 13.334.667 27.5.667 42.5 0s30.334-2.167 46-4.5c15.667-2.333 34.167-6.333 55.5-12 21.334-5.667 40.934-12.4 58.801-20.2 17.8-7.866 30.466-13.733 38-17.6 7.466-3.8 18.866-10.867 34.199-21.2l23-15.5.2-.3.3-.2.301-.2.199-.3.2-.3.3-.2.301-.2.199-.3 1-.3 1-.2.2-1 .3-1 .301-.2.199-.3-8-.5c-5.333-.333-10.5-.667-15.5-1s-12.833-1.833-23.5-4.5c-10.666-2.667-22.166-6.667-34.5-12-12.333-5.333-24.333-11.667-36-19-11.666-7.333-20.1-13.434-25.3-18.3-5.133-4.801-11.8-11.6-20-20.4-8.133-8.866-15.2-17.967-21.2-27.3s-11.733-20.101-17.199-32.3L124.5 551l-.5-1.5-.5-1.5-.3-1-.2-1 1.5.2 1.5.3 11 1.5c7.334 1 18.834 1.333 34.5 1 15.667-.333 26.5-1 32.5-2s9.667-1.667 11-2l2-.5 2.5-.5 2.5-.5.2-.3.3-.2.301-.2.199-.3-2-.5-2-.5-2-.5-2-.5-2-.5c-1.333-.333-3.666-1-7-2-3.333-1-12.333-4.667-27-11-14.666-6.333-26.333-12.5-35-18.5a241.7 241.7 0 0 1-24.8-19.7c-7.8-7.2-16.366-16.467-25.7-27.8-9.333-11.333-17.666-24.5-25-39.5-7.333-15-12.833-29.333-16.5-43a232.143 232.143 0 0 1-7.199-41.5L43 316l1 .2 1 .3 1 .5 1 .5 1 .5 1 .5 15.5 7c10.334 4.667 23.167 8.667 38.5 12 15.334 3.333 24.5 5.167 27.5 5.5l4.5.5h9l-.199-.3-.301-.2-.3-.2-.2-.3-.199-.3-.301-.2-.3-.2-.2-.3-1-.5-1-.5-.199-.3-.301-.2-.3-.2-.2-.3-1-.5-1-.5-.199-.3c-.2-.134-3.067-2.267-8.601-6.4-5.467-4.2-11.2-9.633-17.2-16.3s-12-13.667-18-21A162.158 162.158 0 0 1 77 271c-4.666-8.333-9.6-18.934-14.8-31.8-5.133-12.8-9.033-25.7-11.7-38.7-2.666-13-4.166-25.833-4.5-38.5-.333-12.667 0-23.5 1-32.5s3-19.167 6-30.5 7.334-23.333 13-36l8.5-19 .5-1.5.5-1.5.301-.2.199-.3.2-.3.3-.2.301.2.199.3.2.3.3.2.301.2.199.3.2.3.3.2.5 1 .5 1 .301.2.199.3 13.5 15c9 10 19.667 21.167 32 33.5 12.334 12.333 19.167 18.733 20.5 19.2 1.334.533 3 2.066 5 4.6 2 2.467 8.667 8.367 20 17.7 11.334 9.333 26.167 20.167 44.5 32.5 18.334 12.333 38.667 24.5 61 36.5 22.334 12 46.334 22.833 72 32.5 25.667 9.667 43.667 16 54 19 10.334 3 28 6.833 53 11.5s43.834 7.667 56.5 9c12.667 1.333 21.334 2.1 26 2.3l7 .2-.199-1.5-.301-1.5-2-12.5c-1.333-8.333-2-20-2-35s1.167-28.833 3.5-41.5c2.334-12.667 5.834-25.5 10.5-38.5 4.667-13 9.234-23.434 13.7-31.3 4.534-7.8 10.467-16.7 17.8-26.7 7.334-10 16.834-20.333 28.5-31 11.667-10.667 25-20.167 40-28.5s28.834-14.667 41.5-19c12.667-4.333 23.334-7.167 32-8.5 8.667-1.333 13-2.1 13-2.3z" fill="#5da8dc" stroke="#5da8dc" stroke-width=".5"/><path d="M0 399V0h741v.2c0 .2-4.333.966-13 2.3-8.666 1.333-19.333 4.167-32 8.5-12.666 4.333-26.5 10.667-41.5 19s-28.333 17.833-40 28.5c-11.666 10.667-21.166 21-28.5 31-7.333 10-13.266 18.9-17.8 26.7-4.466 7.866-9.033 18.3-13.7 31.3-4.666 13-8.166 25.833-10.5 38.5-2.333 12.667-3.5 26.5-3.5 41.5s.667 26.667 2 35l2 12.5.301 1.5.199 1.5-7-.2c-4.666-.2-13.333-.966-26-2.3-12.666-1.333-31.5-4.333-56.5-9s-42.666-8.5-53-11.5c-10.333-3-28.333-9.333-54-19-25.666-9.667-49.666-20.5-72-32.5-22.333-12-42.666-24.167-61-36.5-18.333-12.333-33.166-23.167-44.5-32.5-11.333-9.333-18-15.233-20-17.7-2-2.533-3.666-4.066-5-4.6-1.333-.467-8.166-6.867-20.5-19.2-12.333-12.333-23-23.5-32-33.5L80 44.5l-.199-.3-.301-.2-.5-1-.5-1-.3-.2-.2-.3-.199-.3-.301-.2-.3-.2-.2-.3-.199-.3-.301-.2-.3.2-.2.3-.199.3-.301.2-.5 1.5-.5 1.5L66 63c-5.666 12.667-10 24.667-13 36s-5 21.5-6 30.5-1.333 19.833-1 32.5c.334 12.667 1.834 25.5 4.5 38.5 2.667 13 6.567 25.9 11.7 38.7 5.2 12.866 10.134 23.466 14.8 31.8 4.667 8.333 10 16.167 16 23.5 6 7.333 12 14.333 18 21s11.733 12.1 17.2 16.3c5.533 4.134 8.4 6.267 8.601 6.4l.199.3 1 .5 1 .5.2.3.3.2.301.2.199.3 1 .5 1 .5.2.3.3.2.301.2.199.3.2.3.3.2.301.2.199.3h-9l-4.5-.5c-3-.333-12.166-2.167-27.5-5.5-15.333-3.333-28.166-7.333-38.5-12l-15.5-7-1-.5-1-.5-1-.5-1-.5-1-.3-1-.2 1.801 21c1.133 14 3.533 27.833 7.199 41.5 3.667 13.667 9.167 28 16.5 43 7.334 15 15.667 28.167 25 39.5 9.334 11.333 17.9 20.6 25.7 27.8a241.7 241.7 0 0 0 24.8 19.7c8.667 6 20.334 12.167 35 18.5 14.667 6.333 23.667 10 27 11 3.334 1 5.667 1.667 7 2l2 .5 2 .5 2 .5 2 .5 2 .5-.199.3-.301.2-.3.2-.2.3-2.5.5-2.5.5-2 .5c-1.333.333-5 1-11 2s-16.833 1.667-32.5 2c-15.666.333-27.166 0-34.5-1l-11-1.5-1.5-.3-1.5-.2.2 1 .3 1 .5 1.5.5 1.5 8.301 18.2C138.266 581.399 144 592.167 150 601.5s13.067 18.434 21.2 27.3c8.2 8.801 14.867 15.6 20 20.4 5.2 4.866 13.634 10.967 25.3 18.3 11.667 7.333 23.667 13.667 36 19 12.334 5.333 23.834 9.333 34.5 12 10.667 2.667 18.5 4.167 23.5 4.5s10.167.667 15.5 1l8 .5-.199.3-.301.2-.3 1-.2 1-1 .2-1 .3-.199.3-.301.2-.3.2-.2.3-.199.3-.301.2-.3.2-.2.3-23 15.5c-15.333 10.333-26.733 17.4-34.199 21.2-7.534 3.866-20.2 9.733-38 17.6-17.867 7.8-37.467 14.533-58.801 20.2-21.333 5.667-39.833 9.667-55.5 12-15.666 2.333-31 3.833-46 4.5s-29.166.667-42.5 0c-13.333-.667-21.5-1.167-24.5-1.5l-4.5-.5-1-.3-1-.2V399zM1107.801 109.8l.199-.3.5-.3.5-.2v792H382v-.5l35.5-3.5c23.667-2.333 44.834-5.167 63.5-8.5 18.667-3.333 38-8 58-14s39-12.5 57-19.5 34.734-14.6 50.2-22.8c15.534-8.134 28.8-15.367 39.8-21.7s23.067-14.233 36.2-23.7c13.2-9.533 25.534-19.066 37-28.6 11.534-9.467 18.067-14.934 19.601-16.4 1.467-1.533 10.133-10.2 26-26 15.8-15.866 28.866-30.133 39.199-42.8 10.334-12.667 20.5-26.167 30.5-40.5s21-31.833 33-52.5 23.5-44 34.5-70 20.334-52.667 28-80c7.667-27.333 13.334-51.833 17-73.5 3.667-21.667 6.167-41.833 7.5-60.5 1.334-18.667 2.101-35.4 2.301-50.2.133-14.866 6.467-27.4 19-37.6 12.467-10.134 25.199-21.7 38.199-34.7s20.067-20.434 21.2-22.3c1.2-1.8 2.134-2.8 2.8-3 .667-.134 5.167-5.8 13.5-17 8.334-11.134 12.567-16.8 12.7-17l.3-.2.5-1 .5-1 .301-.2.199-.3.2-.3.3-.2.301-.2.199-.3.2-.3.3-.2.301-.2zM812 3.8L793 0h316v107l-2 .2-2 .3-1 .5-1 .5-1 .5-1 .5-1.5.5-3 1-27 9c-17 5.667-34.833 10.5-53.5 14.5l-28 6h-5l.2-.3.3-.2.301-.2.199-.3.2-.3.3-.2.301-.2.199-.3 1-.5 1-.5.2-.3.3-.2.301-.2.199-.3 1-.5 1-.5 5-3.3c3.334-2.134 6.167-4.467 8.5-7 2.334-2.467 7.101-6.8 14.301-13C1024.933 106.066 1033 97 1042 85s16.5-23.833 22.5-35.5 9.167-18.333 9.5-20c.334-1.667.667-3 1-4l.5-1.5.5-1 .5-1 .5-1.5.5-1.5.301-1.5.199-1.5-1 .2-1 .3-.199.3-.301.2-.3.2-.2.3-1 .5-1 .5-1 .5-1 .5-.199.3c-.2.134-1.867 1.134-5 3-3.2 1.8-12.134 6.034-26.801 12.7-14.666 6.667-29.5 12.667-44.5 18s-29 9.5-42 12.5-22.566 1.4-28.699-4.8c-6.2-6.134-13.2-11.934-21-17.4-7.867-5.533-16.634-10.966-26.301-16.3a245.399 245.399 0 0 0-30-14c-10.333-4-21.833-7.233-34.5-9.7zM0 850.5V800h.5l.301.2.199.3.2.3.3.2.301.2.199.3 1 .5 1 .5.2.3.3.2.301.2.199.3 9 5.5c6 3.667 11.4 6.733 16.2 9.2 4.867 2.533 16.867 8.533 36 18 19.2 9.533 42.3 18.967 69.3 28.3s47.334 15.667 61 19c13.667 3.333 32.5 6.667 56.5 10s37.834 5.167 41.5 5.5c3.667.333 8.334.667 14 1l8.5.5v.5H0v-50.5z" fill="#ffffff" stroke="#ffffff" stroke-width=".5"/></svg></a> or <a href="https://www.linkedin.com/in/luisouriach/" title="LinkedIn" class="bio__icon-link linkedin" ><svg viewBox="0 -2 44 44" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path fill="#007EBB" transform="translate(-702,-265)" d="M746,305 L736.2754,305 L736.2754,290.9384 C736.2754,287.257796 734.754233,284.74515 731.409219,284.74515 C728.850659,284.74515 727.427799,286.440738 726.765522,288.074854 C726.517168,288.661395 726.555974,289.478453 726.555974,290.295511 L726.555974,305 L716.921919,305 C716.921919,305 717.046096,280.091247 716.921919,277.827047 L726.555974,277.827047 L726.555974,282.091631 C727.125118,280.226996 730.203669,277.565794 735.116416,277.565794 C741.21143,277.565794 746,281.474355 746,289.890824 L746,305 L746,305 Z M707.17921,274.428187 L707.117121,274.428187 C704.0127,274.428187 702,272.350964 702,269.717936 C702,267.033681 704.072201,265 707.238711,265 C710.402634,265 712.348071,267.028559 712.41016,269.710252 C712.41016,272.34328 710.402634,274.428187 707.17921,274.428187 L707.17921,274.428187 L707.17921,274.428187 Z M703.109831,277.827047 L711.685795,277.827047 L711.685795,305 L703.109831,305 L703.109831,277.827047 L703.109831,277.827047 Z"/></svg>
+        </a>.
+      </p>      
+    </section>
 
-                #mc_embed_signup input[type='submit'] {
-                    background-color: #000;
-                    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .16);
-                    color: white;
-                    height: 3rem;
-                    line-height: 3rem;
-                    max-width: 300px;
-                }
+    <!-- <footer class="footer">
+      <ul class="footer__links">
+        <li><a href="https://twitter.com/disco_lu" class="footer__link" target="_blank">Twitter</a></li>
+        <li><a href="https://www.figma.com/@disco_lu" class="footer__link" target="_blank">Figma</a></li>
+        <li><a href="/book" class="footer__link">Book</a></li>
+      </ul>
+    </footer> -->
 
-                #mc_embed_signup .button:hover {
-                    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08);
-                    cursor: pointer;
-                }
+    <section class="styling-info">
+      <p>Font: <a href="https://fonts.google.com/specimen/Google+Sans+Flex" class="footer__link" target="_blank">Google Sans Flex</a>, 15px.</p>
+      <div class="code">
+        <pre><code id="css-vars-code">:root {
+  --color-primary: oklch(0.42 0.12 350);
+  --color-secondary: oklch(0.42 0.12 350 / 0.7);
+  --color-background: oklch(0.99 0.004 350);
+  --color-highlighter: oklch(0.90 0.03 350);
+  --color-border: oklch(0.82 0.03 350);
+  --font-size: 15px;
+  --line-height: 1.6;
+  --font-family: 'Google Sans Flex', Arial, sans-serif;
+}</code></pre>
+      </div>
+      <p class="mode-switcher">Mode: <a href="#" class="mode-switcher__link" data-mode="light">Light</a> • <a href="#" class="mode-switcher__link" data-mode="dark">Dark</a></p>
+      <p class="theme-switcher">Theme: <a href="#" class="theme-switcher__link" data-theme-palette="pink">Pink</a> • <a href="#" class="theme-switcher__link" data-theme-palette="brutal">Brutalist</a> • <a href="#" class="theme-switcher__link" data-theme-palette="random">Randomise</a><span class="theme-switcher__try-again-wrapper"></span></p>
+    </section>
 
-                #mc_embed_signup div.mce_inline_error {
-                    bottom: 0;
-                    left: 0;
-                    margin: 0;
-                    padding: 1rem;
-                    position: fixed;
-                    text-align: center;
-                    width: 100%;
-                }
-            </style>
-            <div id="mc_embed_signup">
-                <form
-                    action="https://design.us17.list-manage.com/subscribe/post?u=963b4014efa21c0a4760e72fe&amp;id=15832a65e9"
-                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                    target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                        <div class="mc-field-group">
-                            <label for="mce-FNAME">First Name </label>
-                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="First name">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-LNAME">Last Name </label>
-                            <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="Last name">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
-                            </label>
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"
-                                placeholder="Email">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-MMERGE3">Location </label>
-                            <select name="MMERGE3" class="" id="mce-MMERGE3" placeholder="Location">
-                                <option value="">Location</option>
-                                <option value="United States of America">United States of America</option>
-                                <option value="Aaland Islands">Aaland Islands</option>
-                                <option value="Afghanistan">Afghanistan</option>
-                                <option value="Albania">Albania</option>
-                                <option value="Algeria">Algeria</option>
-                                <option value="American Samoa">American Samoa</option>
-                                <option value="Andorra">Andorra</option>
-                                <option value="Angola">Angola</option>
-                                <option value="Anguilla">Anguilla</option>
-                                <option value="Antarctica">Antarctica</option>
-                                <option value="Antigua And Barbuda">Antigua And Barbuda</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Armenia">Armenia</option>
-                                <option value="Aruba">Aruba</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Austria">Austria</option>
-                                <option value="Azerbaijan">Azerbaijan</option>
-                                <option value="Bahamas">Bahamas</option>
-                                <option value="Bahrain">Bahrain</option>
-                                <option value="Bangladesh">Bangladesh</option>
-                                <option value="Barbados">Barbados</option>
-                                <option value="Belarus">Belarus</option>
-                                <option value="Belgium">Belgium</option>
-                                <option value="Belize">Belize</option>
-                                <option value="Benin">Benin</option>
-                                <option value="Bermuda">Bermuda</option>
-                                <option value="Bhutan">Bhutan</option>
-                                <option value="Bolivia">Bolivia</option>
-                                <option value="Bonaire, Saint Eustatius and Saba">Bonaire, Saint Eustatius and Saba
-                                </option>
-                                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                                <option value="Botswana">Botswana</option>
-                                <option value="Bouvet Island">Bouvet Island</option>
-                                <option value="Brazil">Brazil</option>
-                                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                                <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                <option value="Bulgaria">Bulgaria</option>
-                                <option value="Burkina Faso">Burkina Faso</option>
-                                <option value="Burundi">Burundi</option>
-                                <option value="Cambodia">Cambodia</option>
-                                <option value="Cameroon">Cameroon</option>
-                                <option value="Canada">Canada</option>
-                                <option value="Cape Verde">Cape Verde</option>
-                                <option value="Cayman Islands">Cayman Islands</option>
-                                <option value="Central African Republic">Central African Republic</option>
-                                <option value="Chad">Chad</option>
-                                <option value="Chile">Chile</option>
-                                <option value="China">China</option>
-                                <option value="Christmas Island">Christmas Island</option>
-                                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                                <option value="Colombia">Colombia</option>
-                                <option value="Comoros">Comoros</option>
-                                <option value="Congo">Congo</option>
-                                <option value="Cook Islands">Cook Islands</option>
-                                <option value="Costa Rica">Costa Rica</option>
-                                <option value="Cote D'Ivoire">Cote D'Ivoire</option>
-                                <option value="Croatia">Croatia</option>
-                                <option value="Cuba">Cuba</option>
-                                <option value="Curacao">Curacao</option>
-                                <option value="Cyprus">Cyprus</option>
-                                <option value="Czech Republic">Czech Republic</option>
-                                <option value="Democratic Republic of the Congo">Democratic Republic of the Congo
-                                </option>
-                                <option value="Denmark">Denmark</option>
-                                <option value="Djibouti">Djibouti</option>
-                                <option value="Dominica">Dominica</option>
-                                <option value="Dominican Republic">Dominican Republic</option>
-                                <option value="Ecuador">Ecuador</option>
-                                <option value="Egypt">Egypt</option>
-                                <option value="El Salvador">El Salvador</option>
-                                <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                <option value="Eritrea">Eritrea</option>
-                                <option value="Estonia">Estonia</option>
-                                <option value="Ethiopia">Ethiopia</option>
-                                <option value="Falkland Islands">Falkland Islands</option>
-                                <option value="Faroe Islands">Faroe Islands</option>
-                                <option value="Fiji">Fiji</option>
-                                <option value="Finland">Finland</option>
-                                <option value="France">France</option>
-                                <option value="French Guiana">French Guiana</option>
-                                <option value="French Polynesia">French Polynesia</option>
-                                <option value="French Southern Territories">French Southern Territories</option>
-                                <option value="Gabon">Gabon</option>
-                                <option value="Gambia">Gambia</option>
-                                <option value="Georgia">Georgia</option>
-                                <option value="Germany">Germany</option>
-                                <option value="Ghana">Ghana</option>
-                                <option value="Gibraltar">Gibraltar</option>
-                                <option value="Greece">Greece</option>
-                                <option value="Greenland">Greenland</option>
-                                <option value="Grenada">Grenada</option>
-                                <option value="Guadeloupe">Guadeloupe</option>
-                                <option value="Guam">Guam</option>
-                                <option value="Guatemala">Guatemala</option>
-                                <option value="Guernsey">Guernsey</option>
-                                <option value="Guinea">Guinea</option>
-                                <option value="Guinea-Bissau">Guinea-Bissau</option>
-                                <option value="Guyana">Guyana</option>
-                                <option value="Haiti">Haiti</option>
-                                <option value="Heard and Mc Donald Islands">Heard and Mc Donald Islands</option>
-                                <option value="Honduras">Honduras</option>
-                                <option value="Hong Kong">Hong Kong</option>
-                                <option value="Hungary">Hungary</option>
-                                <option value="Iceland">Iceland</option>
-                                <option value="India">India</option>
-                                <option value="Indonesia">Indonesia</option>
-                                <option value="Iran">Iran</option>
-                                <option value="Iraq">Iraq</option>
-                                <option value="Ireland">Ireland</option>
-                                <option value="Isle of Man">Isle of Man</option>
-                                <option value="Israel">Israel</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Jamaica">Jamaica</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Jersey  (Channel Islands)">Jersey (Channel Islands)</option>
-                                <option value="Jordan">Jordan</option>
-                                <option value="Kazakhstan">Kazakhstan</option>
-                                <option value="Kenya">Kenya</option>
-                                <option value="Kiribati">Kiribati</option>
-                                <option value="Kuwait">Kuwait</option>
-                                <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic
-                                </option>
-                                <option value="Latvia">Latvia</option>
-                                <option value="Lebanon">Lebanon</option>
-                                <option value="Lesotho">Lesotho</option>
-                                <option value="Liberia">Liberia</option>
-                                <option value="Libya">Libya</option>
-                                <option value="Liechtenstein">Liechtenstein</option>
-                                <option value="Lithuania">Lithuania</option>
-                                <option value="Luxembourg">Luxembourg</option>
-                                <option value="Macau">Macau</option>
-                                <option value="Macedonia">Macedonia</option>
-                                <option value="Madagascar">Madagascar</option>
-                                <option value="Malawi">Malawi</option>
-                                <option value="Malaysia">Malaysia</option>
-                                <option value="Maldives">Maldives</option>
-                                <option value="Mali">Mali</option>
-                                <option value="Malta">Malta</option>
-                                <option value="Marshall Islands">Marshall Islands</option>
-                                <option value="Martinique">Martinique</option>
-                                <option value="Mauritania">Mauritania</option>
-                                <option value="Mauritius">Mauritius</option>
-                                <option value="Mayotte">Mayotte</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                                <option value="Moldova, Republic of">Moldova, Republic of</option>
-                                <option value="Monaco">Monaco</option>
-                                <option value="Mongolia">Mongolia</option>
-                                <option value="Montenegro">Montenegro</option>
-                                <option value="Montserrat">Montserrat</option>
-                                <option value="Morocco">Morocco</option>
-                                <option value="Mozambique">Mozambique</option>
-                                <option value="Myanmar">Myanmar</option>
-                                <option value="Namibia">Namibia</option>
-                                <option value="Nauru">Nauru</option>
-                                <option value="Nepal">Nepal</option>
-                                <option value="Netherlands">Netherlands</option>
-                                <option value="Netherlands Antilles">Netherlands Antilles</option>
-                                <option value="New Caledonia">New Caledonia</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="Nicaragua">Nicaragua</option>
-                                <option value="Niger">Niger</option>
-                                <option value="Nigeria">Nigeria</option>
-                                <option value="Niue">Niue</option>
-                                <option value="Norfolk Island">Norfolk Island</option>
-                                <option value="North Korea">North Korea</option>
-                                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                                <option value="Norway">Norway</option>
-                                <option value="Oman">Oman</option>
-                                <option value="Pakistan">Pakistan</option>
-                                <option value="Palau">Palau</option>
-                                <option value="Palestine">Palestine</option>
-                                <option value="Panama">Panama</option>
-                                <option value="Papua New Guinea">Papua New Guinea</option>
-                                <option value="Paraguay">Paraguay</option>
-                                <option value="Peru">Peru</option>
-                                <option value="Philippines">Philippines</option>
-                                <option value="Pitcairn">Pitcairn</option>
-                                <option value="Poland">Poland</option>
-                                <option value="Portugal">Portugal</option>
-                                <option value="Puerto Rico">Puerto Rico</option>
-                                <option value="Qatar">Qatar</option>
-                                <option value="Republic of Kosovo">Republic of Kosovo</option>
-                                <option value="Reunion">Reunion</option>
-                                <option value="Romania">Romania</option>
-                                <option value="Russia">Russia</option>
-                                <option value="Rwanda">Rwanda</option>
-                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                <option value="Saint Lucia">Saint Lucia</option>
-                                <option value="Saint Martin">Saint Martin</option>
-                                <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines
-                                </option>
-                                <option value="Samoa (Independent)">Samoa (Independent)</option>
-                                <option value="San Marino">San Marino</option>
-                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                <option value="Saudi Arabia">Saudi Arabia</option>
-                                <option value="Senegal">Senegal</option>
-                                <option value="Serbia">Serbia</option>
-                                <option value="Seychelles">Seychelles</option>
-                                <option value="Sierra Leone">Sierra Leone</option>
-                                <option value="Singapore">Singapore</option>
-                                <option value="Sint Maarten">Sint Maarten</option>
-                                <option value="Slovakia">Slovakia</option>
-                                <option value="Slovenia">Slovenia</option>
-                                <option value="Solomon Islands">Solomon Islands</option>
-                                <option value="Somalia">Somalia</option>
-                                <option value="South Africa">South Africa</option>
-                                <option value="South Georgia and the South Sandwich Islands">South Georgia and the South
-                                    Sandwich Islands</option>
-                                <option value="South Korea">South Korea</option>
-                                <option value="South Sudan">South Sudan</option>
-                                <option value="Spain">Spain</option>
-                                <option value="Sri Lanka">Sri Lanka</option>
-                                <option value="St. Helena">St. Helena</option>
-                                <option value="St. Pierre and Miquelon">St. Pierre and Miquelon</option>
-                                <option value="Sudan">Sudan</option>
-                                <option value="Suriname">Suriname</option>
-                                <option value="Svalbard and Jan Mayen Islands">Svalbard and Jan Mayen Islands</option>
-                                <option value="Swaziland">Swaziland</option>
-                                <option value="Sweden">Sweden</option>
-                                <option value="Switzerland">Switzerland</option>
-                                <option value="Syria">Syria</option>
-                                <option value="Taiwan">Taiwan</option>
-                                <option value="Tajikistan">Tajikistan</option>
-                                <option value="Tanzania">Tanzania</option>
-                                <option value="Thailand">Thailand</option>
-                                <option value="Timor-Leste">Timor-Leste</option>
-                                <option value="Togo">Togo</option>
-                                <option value="Tokelau">Tokelau</option>
-                                <option value="Tonga">Tonga</option>
-                                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                <option value="Tunisia">Tunisia</option>
-                                <option value="Turkey">Turkey</option>
-                                <option value="Turkmenistan">Turkmenistan</option>
-                                <option value="Turks &amp; Caicos Islands">Turks &amp; Caicos Islands</option>
-                                <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                                <option value="Tuvalu">Tuvalu</option>
-                                <option value="Uganda">Uganda</option>
-                                <option value="Ukraine">Ukraine</option>
-                                <option value="United Arab Emirates">United Arab Emirates</option>
-                                <option value="United Kingdom">United Kingdom</option>
-                                <option value="Uruguay">Uruguay</option>
-                                <option value="USA Minor Outlying Islands">USA Minor Outlying Islands</option>
-                                <option value="Uzbekistan">Uzbekistan</option>
-                                <option value="Vanuatu">Vanuatu</option>
-                                <option value="Vatican City State (Holy See)">Vatican City State (Holy See)</option>
-                                <option value="Venezuela">Venezuela</option>
-                                <option value="Vietnam">Vietnam</option>
-                                <option value="Virgin Islands (British)">Virgin Islands (British)</option>
-                                <option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option>
-                                <option value="Wallis and Futuna Islands">Wallis and Futuna Islands</option>
-                                <option value="Western Sahara">Western Sahara</option>
-                                <option value="Yemen">Yemen</option>
-                                <option value="Zambia">Zambia</option>
-                                <option value="Zimbabwe">Zimbabwe</option>
+  </div>
 
-                            </select>
-                        </div>
-                        <div class="mc-field-group input-group">
-                            <strong>Would you like to write for 8px? </strong>
-                            <ul>
-                                <li><input type="radio" value="Yes" name="MMERGE4" id="mce-MMERGE4-0"
-                                        checked="checked"><label for="mce-MMERGE4-0">Yes</label></li>
-                                <li><input type="radio" value="No" name="MMERGE4" id="mce-MMERGE4-1"><label
-                                        for="mce-MMERGE4-1">No</label></li>
-                            </ul>
-                        </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                name="b_963b4014efa21c0a4760e72fe_15832a65e9" tabindex="-1" value=""></div>
-                        <div class="clear"><input type="submit" value="Stay up to date" name="subscribe"
-                                id="mc-embedded-subscribe" class="button"></div>
-                    </div>
-                </form>
-            </div>
-            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-            <script
-                type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[3] = 'MMERGE3'; ftypes[3] = 'dropdown'; fnames[4] = 'MMERGE4'; ftypes[4] = 'radio'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-            <!--End mc_embed_signup-->
-        </div>
-    </div>
+  <script>
+    const html = document.documentElement;
 
-    <footer class="centered footer">
-        By <a href="https://www.twitter.com/disco_lu">@disco_lu</a>
-    </footer>
+    // Mode switcher
+    const modeLinks = document.querySelectorAll('.mode-switcher__link');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateActiveMode(currentTheme);
 
+    modeLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const mode = this.getAttribute('data-mode');
+        html.setAttribute('data-theme', mode);
+        localStorage.setItem('theme', mode);
+        updateActiveMode(mode);
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111870370-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        if (html.getAttribute('data-theme-palette') === 'random') {
+          const savedRandomColors = localStorage.getItem('random-colors');
+          if (savedRandomColors) {
+            applyRandomTheme(JSON.parse(savedRandomColors));
+          }
+        }
 
-        gtag('config', 'UA-111870370-1');
-    </script>
+        setTimeout(updateCodeBlock, 0);
+      });
+    });
+
+    function updateActiveMode(mode) {
+      modeLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-mode') === mode);
+      });
+    }
+
+    // Theme switcher
+    const themeLinks = document.querySelectorAll('.theme-switcher__link');
+    const currentThemePalette = localStorage.getItem('theme-palette') || 'pink';
+    html.setAttribute('data-theme-palette', currentThemePalette);
+    updateActiveTheme(currentThemePalette);
+
+    if (currentThemePalette === 'random') {
+      const savedRandomColors = localStorage.getItem('random-colors');
+      if (savedRandomColors) {
+        applyRandomTheme(JSON.parse(savedRandomColors));
+      } else {
+        generateRandomTheme();
+      }
+    }
+
+    themeLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const palette = this.getAttribute('data-theme-palette');
+
+        if (palette === 'random') {
+          generateRandomTheme();
+          updateActiveTheme(palette);
+        } else {
+          html.setAttribute('data-theme-palette', palette);
+          localStorage.setItem('theme-palette', palette);
+          localStorage.removeItem('random-colors');
+          html.style.removeProperty('--color-primary');
+          html.style.removeProperty('--color-secondary');
+          html.style.removeProperty('--color-background');
+          html.style.removeProperty('--color-highlighter');
+          html.style.removeProperty('--color-border');
+          updateActiveTheme(palette);
+          setTimeout(updateCodeBlock, 0);
+        }
+      });
+    });
+
+    function updateActiveTheme(palette) {
+      const tryAgainWrapper = document.querySelector('.theme-switcher__try-again-wrapper');
+
+      themeLinks.forEach(link => {
+        if (link.getAttribute('data-theme-palette') === palette) {
+          link.classList.add('active');
+
+          if (palette === 'random' && tryAgainWrapper && !tryAgainWrapper.querySelector('.theme-switcher__try-again')) {
+            const tryAgain = document.createElement('a');
+            tryAgain.href = '#';
+            tryAgain.className = 'theme-switcher__try-again';
+            tryAgain.textContent = 'try again';
+            tryAgain.addEventListener('click', function (e) {
+              e.preventDefault();
+              generateRandomTheme();
+              setTimeout(updateCodeBlock, 0);
+            });
+            tryAgainWrapper.appendChild(tryAgain);
+          }
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      if (palette !== 'random' && tryAgainWrapper) {
+        tryAgainWrapper.innerHTML = '';
+      }
+    }
+
+    function generateRandomTheme() {
+      const hue = Math.floor(Math.random() * 360);
+      const colors = calculateContrastColors(hue);
+      applyRandomTheme(colors);
+      html.setAttribute('data-theme-palette', 'random');
+      localStorage.setItem('theme-palette', 'random');
+      localStorage.setItem('random-colors', JSON.stringify(colors));
+    }
+
+    function calculateContrastColors(hue) {
+      return {
+        light: {
+          primary: `oklch(0.42 0.12 ${hue})`,
+          secondary: `oklch(0.42 0.12 ${hue} / 0.7)`,
+          background: `oklch(0.99 0.004 ${hue})`,
+          highlighter: `oklch(0.90 0.03 ${hue})`,
+          border: `oklch(0.82 0.03 ${hue})`
+        },
+        dark: {
+          primary: `oklch(0.88 0.06 ${hue})`,
+          secondary: `oklch(0.88 0.06 ${hue} / 0.7)`,
+          background: `oklch(0.16 0.008 ${hue})`,
+          highlighter: `oklch(0.32 0.08 ${hue})`,
+          border: `oklch(0.30 0.02 ${hue})`
+        }
+      };
+    }
+
+    function applyRandomTheme(colors) {
+      const currentMode = html.getAttribute('data-theme') || 'light';
+      const modeColors = currentMode === 'dark' ? colors.dark : colors.light;
+
+      html.style.setProperty('--color-primary', modeColors.primary);
+      html.style.setProperty('--color-secondary', modeColors.secondary);
+      html.style.setProperty('--color-background', modeColors.background);
+      html.style.setProperty('--color-highlighter', modeColors.highlighter);
+      html.style.setProperty('--color-border', modeColors.border);
+
+      updateCodeBlock();
+    }
+
+    function updateCodeBlock() {
+      const codeElement = document.getElementById('css-vars-code');
+      if (!codeElement) return;
+
+      const rootStyles = getComputedStyle(document.documentElement);
+      const primary = rootStyles.getPropertyValue('--color-primary').trim();
+      const secondary = rootStyles.getPropertyValue('--color-secondary').trim();
+      const background = rootStyles.getPropertyValue('--color-background').trim();
+      const highlighter = rootStyles.getPropertyValue('--color-highlighter').trim();
+      const border = rootStyles.getPropertyValue('--color-border').trim();
+      const fontSize = rootStyles.getPropertyValue('--font-size').trim();
+      const lineHeight = rootStyles.getPropertyValue('--line-height').trim();
+      const fontFamily = rootStyles.getPropertyValue('--font-family').trim();
+
+      codeElement.textContent = `:root {
+  --color-primary: ${primary};
+  --color-secondary: ${secondary};
+  --color-background: ${background};
+  --color-highlighter: ${highlighter};
+  --color-border: ${border};
+  --font-size: ${fontSize};
+  --line-height: ${lineHeight};
+  --font-family: ${fontFamily};
+}`;
+    }
+
+    setTimeout(updateCodeBlock, 0);
+  </script>
+
 </body>
-
 </html>
